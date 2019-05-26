@@ -25,4 +25,16 @@ describe('taxi fee', function () {
         let expected = 19;
         expect(summary).toEqual(expected);
     });
+    it('between 2km and 8km and no parking' , function() {
+        let inputs = {distance:7,parkTime:0};
+        let summary = main(7,0);
+        let expected = 10;
+        expect(summary).toEqual(expected);
+    });
+    it('within and no parking' , function() {
+        let inputs = {distance:1,parkTime:0};
+        let summary = main(1,0);
+        let expected = 6;
+        expect(summary).toEqual(expected);
+    });
 });
